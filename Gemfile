@@ -14,6 +14,10 @@ gem 'bootstrap-sass'
 gem 'high_voltage'
 gem 'slim-rails'
 gem 'therubyracer', :platform=>:ruby
+gem 'inherited_resources'
+gem 'simple_form'
+gem 'smart_listing', github: 'Sology/smart_listing'
+gem 'heroku'
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_21]
@@ -34,4 +38,7 @@ group :test do
   gem 'faker'
   gem 'launchy'
   gem 'selenium-webdriver'
+  gem 'pry-nav'
+  gem 'pry-byebug'
+  gem 'pry-rails'
 end

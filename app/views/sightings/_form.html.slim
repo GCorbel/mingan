@@ -1,0 +1,29 @@
+td [colspan="11"]
+  = simple_form_for(resource, html: {class: 'form-horizontal' }, remote: true) do |f|
+    .container
+      .row
+        .col-md-4
+          = f.input :date
+          = f.input :time
+          = f.input :region, collection: ['Ming','Estu']
+          = f.input :vessel, collection: ['Mistral']
+          = f.input :longitude
+          = f.input :latitude
+        .col-md-4
+          = f.input :sea_state, collection: ['Ok']
+          = f.input :cloud_cover, collection: ['Nuageux']
+          = f.input :wind_speed
+          = f.input :wind_direction
+          = f.input :visibility
+          = f.input :comments
+        .col-md-4
+          = f.input :staff
+          = f.input :start_time
+          = f.input :start_place
+          = f.input :end_time
+          = f.input :end_place
+          = f.input :comments2
+    .control-group
+      .controls
+        = f.submit t('shared.submit'), class: 'btn btn-primary'
+        button.btn.btn-link.cancel Annuler

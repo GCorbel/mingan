@@ -1,0 +1,26 @@
+td
+  = object.date
+td
+  = object.time
+td
+  = object.region
+td
+  = object.vessel
+td
+  = object.longitude
+td
+  = object.latitude
+td
+  = object.sea_state
+td
+  = object.cloud_cover
+td
+  = object.wind_speed
+td
+  = object.wind_direction
+td
+  = object.visibility
+td.actions
+  = smart_listing_item_actions [ { name: :edit, url: edit_sighting_path(object) },
+    { name: :destroy, url: sighting_path(object), confirmation: "Êtes vous sûre?" }]
+
