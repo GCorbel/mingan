@@ -15,4 +15,14 @@ RSpec.describe Sighting, :type => :model do
       end
     end
   end
+
+  describe "#search" do
+    it "search models with the given parameters" do
+      sighting1 = create(:sighting, region: "Region1", vessel: "Vessel1")
+      create(:sighting, region: "Region2", vessel: "Vessel1")
+      create(:sighting, region: "Region1", vessel: "Vessel2")
+      search = { "region" => "Region1", "vessel" => "Vessel1" }
+      expect(Sighting.search(search)).to eq [sighting1]
+    end
+  end
 end

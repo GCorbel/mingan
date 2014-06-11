@@ -7,4 +7,8 @@ class Sighting < ActiveRecord::Base
       end
     end
   end
+
+  def self.search(search)
+    where(search)
+  end
 end
