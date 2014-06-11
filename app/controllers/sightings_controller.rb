@@ -2,10 +2,17 @@ class SightingsController < InheritedResources::Base
   include SmartListing::Helper::ControllerExtensions
   helper  SmartListing::Helper
 
-  respond_to :html, :js
+  respond_to :html, :js, :xml, :csv
 
   def index
-    smart_listing_create :sightings, Sighting.all, partial: "sightings/list"
+    respond_to do |format|
+      format.html { smart_listing_create :sightings, Sighting.all,
+                    partial: "sightings/list" }
+      format.js { smart_listing_create :sightings, Sighting.all,
+                    partial: "sightings/list" }
+      format.csv { send_data Sighting.to_csv }
+      format.xml { render xml: Sighting.all.to_xml }
+    end
   end
 
   def new

@@ -1,1 +1,3 @@
 = smart_listing_render(:sightings)
+p Export : #{link_to 'xml', sightings_path(format: 'xml')}
+  #{link_to 'csv', sightings_path(format: 'csv') }
