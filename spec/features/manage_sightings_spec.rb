@@ -19,13 +19,15 @@ feature 'Manage Sittings' do
   #   When I am a on the creation page
   #   And I fill the form with valid informatiosn
   #   Then I create a new sighting
-  scenario 'Create a new sighting' do
-    visit new_sighting_path
+  scenario 'Create a new sighting', js: true do
+    visit sightings_path
+    click_on "New"
     fill_in_form_with_valid_information
-    expect(page).to have_content('Votre observation a été enregisté')
+    expect(page).to have_content("50.01")
   end
 
   def fill_in_form_with_valid_information
+    fill_in "Longitude", with: "50.01"
     click_on 'Valider'
   end
 
