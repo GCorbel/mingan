@@ -1,4 +1,1 @@
-var smart_listing = $('#sightings').smart_listing();
-console.log("<%= j(render(:partial => "sightings/form", :resource => @sighting)) %>");
-smart_listing.new_item("<%= j(render(:partial => "sightings/form",
-                                     :resource => @sighting)) %>");
+<%= smart_listing_item :sightings, :new, @sighting, "sightings/form" %>
