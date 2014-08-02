@@ -34,7 +34,6 @@ class SightingsController < InheritedResources::Base
 
   private
 
-
   def permitted_params
     params.require(:sighting).permit(:date, :time, :region, :vessel,
                                      :longitude, :latitude, :sea_state,

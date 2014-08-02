@@ -22,8 +22,9 @@ feature 'Manage Region' do
   scenario 'Create a new region', js: true do
     visit regions_path
     click_on "New"
-    fill_in_form_with_valid_information
-    expect(page).to have_content("50.01")
+    fill_in "Name", with: "Mingan"
+    click_on 'Valider'
+    expect(page).to have_content("Mingan")
   end
 
 end
