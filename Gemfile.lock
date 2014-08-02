@@ -1,6 +1,5 @@
-GIT
-  remote: git://github.com/Sology/smart_listing.git
-  revision: a084fb9e6c092f510c3fd11d576db831bef6c3dd
+PATH
+  remote: ../smart_listing
   specs:
     smart_listing (1.0.0)
       coffee-rails

@@ -17,6 +17,33 @@
       .row
         = f.submit "Rechercher", class: 'btn btn-primary'
 
-= smart_listing_render(:sightings)
+= smart_listing_render(:sightings) do |smart_listing|
+  table.table.table-striped
+    thead
+      th date
+      th time
+      th region
+      th vessel
+      th longitude
+      th latitude
+      th sea_state
+      th cloud_cover
+      th wind_speed
+      th wind_direction
+      th visibility
+      th
+    tbody
+      - if smart_listing.empty?
+        tr
+          td [calspan="11"]
+           | Aucune donnée
+      - else
+        - smart_listing.collection.each do |sighting|
+          tr.editable [data-id="#{sighting.id}"]
+            = render sighting, object: sighting
+      = smart_listing.item_new link: new_sighting_path
+  = smart_listing.paginate
+  = smart_listing.pagination_per_page_links
+
 p Export : #{link_to 'xml', sightings_path(format: 'xml')}
   #{link_to 'csv', sightings_path(format: 'csv') }

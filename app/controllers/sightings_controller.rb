@@ -7,9 +7,7 @@ class SightingsController < InheritedResources::Base
   def index
     @search = Sighting.new
     respond_to do |format|
-      format.html { smart_listing_create :sightings,
-                    Sighting.all,
-                    partial: "sightings/list" }
+      format.html { smart_listing_create :sightings, Sighting.all }
       format.js { smart_listing_create :sightings,
                     Sighting.search(params["search"]),
                     partial: "sightings/list" }
