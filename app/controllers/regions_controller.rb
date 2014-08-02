@@ -5,7 +5,7 @@ class RegionsController < InheritedResources::Base
   respond_to :html, :js
 
   def index
-    smart_listing_create :regions, Region.all, partial: "regions/list"
+    smart_listing_create :regions, Region.all
   end
 
   def new
@@ -14,6 +14,10 @@ class RegionsController < InheritedResources::Base
       format.html
       format.js { render 'new' }
     end
+  end
+
+  def update
+    resource.update_attributes(permitted_params)
   end
 
   def create
