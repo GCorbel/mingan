@@ -28,6 +28,9 @@ end
 group :development, :test do
   gem 'factory_girl_rails'
   gem 'rspec-rails'
+  gem 'pry-nav'
+  gem 'pry-byebug'
+  gem 'pry-rails'
 end
 group :production do
   gem 'unicorn'
@@ -38,8 +41,5 @@ group :test do
   gem 'faker'
   gem 'launchy'
   gem 'selenium-webdriver'
-  gem 'pry-nav'
-  gem 'pry-byebug'
-  gem 'pry-rails'
   gem 'timecop'
 end
