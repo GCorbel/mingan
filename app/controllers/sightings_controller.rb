@@ -11,7 +11,7 @@ class SightingsController < InheritedResources::Base
       format.js { smart_listing_create :sightings,
                     Sighting.search(params["search"]),
                     partial: "sightings/list" }
-      format.csv { send_data Sighting.to_csv }
+      format.csv { send_data SightingCsvExporter.new.call }
       format.xml { render xml: Sighting.all.to_xml }
     end
   end
