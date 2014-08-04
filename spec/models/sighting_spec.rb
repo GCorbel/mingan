@@ -8,6 +8,12 @@ RSpec.describe Sighting, :type => :model do
   it { is_expected.to belong_to(:cloud_cover) }
   it { is_expected.to belong_to(:mode) }
 
+  it { is_expected.to have_many(:biopsies) }
+  it { is_expected.to have_many(:feces) }
+  it { is_expected.to have_many(:blows) }
+  it { is_expected.to have_many(:animal_sightings) }
+  it { is_expected.to have_many(:animals).through(:animal_sightings) }
+
   describe "#search" do
     it "search models with the given parameters" do
       region1 = create(:region)

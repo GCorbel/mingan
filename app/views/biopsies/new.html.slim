@@ -1,0 +1,7 @@
+= smart_listing_render(:biopsies)
+javascript:
+  var smart_listing = $('#biopsies').smart_listing();
+  smart_listing.new_item("#{j(render('form', object: resource))}");
+
+
+

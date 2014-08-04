@@ -1,0 +1,10 @@
+
+td
+  = object.animal
+td
+  = object.sighting
+td.actions
+  = smart_listing_item_actions [ { name: :edit,
+    url: edit_sighting_animal_sighting_path(parent, object) },
+    { name: :destroy, url: sighting_animal_sighting_path(parent, object),
+      confirmation: t('smart_listing.msgs.destroy_confirmation') }]

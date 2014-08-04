@@ -1,0 +1,12 @@
+td
+  = object.name
+td
+  = object.biopsy
+td
+  = object.fece
+td
+  = object.blow
+td.actions
+  = smart_listing_item_actions [ { name: :edit, url: edit_animal_path(object) },
+    { name: :destroy, url: animal_path(object),
+      confirmation: t('smart_listing.msgs.destroy_confirmation') }]

@@ -1,8 +1,8 @@
-# Feature: 'Manage Signtings'
+# Feature: 'Manage Sightings'
 #   As a specialist
 #   I want to manage an sightings page
 #   So I can have the control of my sightings
-feature 'Manage Sittings' do
+feature 'Manage Sightings' do
 
   # Scenario: View the list of sightings
   #   Given I am a logged specialist

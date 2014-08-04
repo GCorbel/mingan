@@ -1,0 +1,15 @@
+td colspan="7"
+  = simple_form_for([parent, object],
+    html: {class: 'form-horizontal' }, remote: true) do |f|
+    .container
+      .row
+        = f.input :tissue
+        = f.input :preservation
+        = f.input :purpose
+        = f.input :reaction
+        = f.input :comments
+        = f.input :sex
+    .control-group
+      .controls
+        = f.submit t('shared.submit'), class: 'btn btn-primary'
+        button.btn.btn-link.cancel Annuler

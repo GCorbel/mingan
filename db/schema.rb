@@ -11,16 +11,79 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140804120746) do
+ActiveRecord::Schema.define(version: 20140804171207) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "animal_sightings", force: true do |t|
+    t.integer  "animal_id"
+    t.integer  "sighting_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "animal_sightings", ["animal_id"], name: "index_animal_sightings_on_animal_id", using: :btree
+  add_index "animal_sightings", ["sighting_id"], name: "index_animal_sightings_on_sighting_id", using: :btree
+
+  create_table "animals", force: true do |t|
+    t.string   "name"
+    t.integer  "biopsy_id"
+    t.integer  "fece_id"
+    t.integer  "blow_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "animals", ["biopsy_id"], name: "index_animals_on_biopsy_id", using: :btree
+  add_index "animals", ["blow_id"], name: "index_animals_on_blow_id", using: :btree
+  add_index "animals", ["fece_id"], name: "index_animals_on_fece_id", using: :btree
+
+  create_table "biopsies", force: true do |t|
+    t.string   "tissue"
+    t.string   "preservation"
+    t.string   "purpose"
+    t.string   "reaction"
+    t.text     "comments"
+    t.string   "sex"
+    t.integer  "sighting_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "biopsies", ["sighting_id"], name: "index_biopsies_on_sighting_id", using: :btree
+
+  create_table "blows", force: true do |t|
+    t.string   "distance"
+    t.string   "quality"
+    t.string   "preservation"
+    t.string   "behavior"
+    t.string   "group_size"
+    t.text     "comments"
+    t.integer  "sighting_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "blows", ["sighting_id"], name: "index_blows_on_sighting_id", using: :btree
 
   create_table "cloud_covers", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "feces", force: true do |t|
+    t.string   "mass"
+    t.string   "color"
+    t.string   "consistency"
+    t.string   "preservation"
+    t.integer  "sighting_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "feces", ["sighting_id"], name: "index_feces_on_sighting_id", using: :btree
 
   create_table "modes", force: true do |t|
     t.string   "name"

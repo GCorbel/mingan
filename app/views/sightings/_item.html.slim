@@ -20,6 +20,16 @@ td
   = object.wind_direction
 td
   = object.visibility
+td
+  = link_to pluralize(object.biopsies.count, "biopsy"),
+    new_sighting_biopsy_path(object)
+td
+  = link_to pluralize(object.feces.count, "fece"), new_sighting_fece_path(object)
+td
+  = link_to pluralize(object.blows.count, "blow"), new_sighting_blow_path(object)
+td
+  = link_to pluralize(object.animal_sightings.count, "animal"),
+    new_sighting_animal_sighting_path(object)
 td.actions
   = smart_listing_item_actions [ { name: :edit, url: edit_sighting_path(object) },
     { name: :destroy, url: sighting_path(object), confirmation: "Êtes vous sûre?" }]

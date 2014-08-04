@@ -1,0 +1,4 @@
+= smart_listing_render(:animal_sightings)
+javascript:
+  var smart_listing = $('#animal_sightings').smart_listing();
+  smart_listing.new_item("#{j(render('form', object: resource))}");
