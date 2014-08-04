@@ -54,6 +54,9 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    capybara-webkit (1.1.0)
+      capybara (~> 2.0, >= 2.0.2)
+      json
     childprocess (0.5.3)
       ffi (~> 1.0, >= 1.0.11)
     coderay (1.1.0)
@@ -199,7 +202,7 @@ GEM
       multi_json (~> 1.0)
       rubyzip (~> 1.0)
       websocket (~> 1.0.4)
-    shoulda-matchers (2.6.1)
+    shoulda-matchers (2.6.2)
       activesupport (>= 3.0.0)
     simple_form (3.0.2)
       actionpack (~> 4.0)
@@ -257,6 +260,7 @@ DEPENDENCIES
   binding_of_caller
   bootstrap-sass
   capybara
+  capybara-webkit
   coffee-rails (~> 4.0.0)
   database_cleaner
   factory_girl_rails
