@@ -8,7 +8,7 @@ td colspan="7"
         = f.input :purpose
         = f.input :reaction
         = f.input :comments
-        = f.input :sex
+        = f.input :sex, collection: ['Male', 'Female']
     .control-group
       .controls
         = f.submit t('shared.submit'), class: 'btn btn-primary'

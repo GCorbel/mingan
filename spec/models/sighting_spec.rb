@@ -7,6 +7,7 @@ RSpec.describe Sighting, :type => :model do
   it { is_expected.to belong_to(:sea_state) }
   it { is_expected.to belong_to(:cloud_cover) }
   it { is_expected.to belong_to(:mode) }
+  it { is_expected.to belong_to(:species) }
 
   it { is_expected.to have_many(:biopsies) }
   it { is_expected.to have_many(:feces) }

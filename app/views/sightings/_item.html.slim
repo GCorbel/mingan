@@ -3,23 +3,11 @@ td
 td
   = object.time
 td
+  = object.mode
+td
+  = object.species
+td
   = object.region
-td
-  = object.vessel
-td
-  = object.longitude
-td
-  = object.latitude
-td
-  = object.sea_state
-td
-  = object.cloud_cover
-td
-  = object.wind_speed
-td
-  = object.wind_direction
-td
-  = object.visibility
 td
   = link_to pluralize(object.biopsies.count, "biopsy"),
     new_sighting_biopsy_path(object)

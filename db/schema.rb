@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140804171207) do
+ActiveRecord::Schema.define(version: 20140804200605) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -124,6 +124,20 @@ ActiveRecord::Schema.define(version: 20140804171207) do
     t.string   "end_place"
     t.text     "comments2"
     t.integer  "mode_id"
+    t.integer  "species_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "sightings", ["cloud_cover_id"], name: "index_sightings_on_cloud_cover_id", using: :btree
+  add_index "sightings", ["mode_id"], name: "index_sightings_on_mode_id", using: :btree
+  add_index "sightings", ["region_id"], name: "index_sightings_on_region_id", using: :btree
+  add_index "sightings", ["sea_state_id"], name: "index_sightings_on_sea_state_id", using: :btree
+  add_index "sightings", ["species_id"], name: "index_sightings_on_species_id", using: :btree
+  add_index "sightings", ["vessel_id"], name: "index_sightings_on_vessel_id", using: :btree
+
+  create_table "species", force: true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -1,7 +1,6 @@
-h1 Cloud Covers
 table.table.table-striped
-  thead
-    th name
+  thead 
+    th name 
     th
   tbody
     - if smart_listing.empty?
@@ -12,6 +11,6 @@ table.table.table-striped
       - smart_listing.collection.each do |object|
         tr.editable [data-id="#{object.id}"]
           = render "item", object: object
-    = smart_listing.item_new link: new_cloud_cover_path
+    = smart_listing.item_new link: new_species_path
 = smart_listing.paginate
 = smart_listing.pagination_per_page_links

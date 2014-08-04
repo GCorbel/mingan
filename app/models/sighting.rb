@@ -4,6 +4,7 @@ class Sighting < ActiveRecord::Base
   belongs_to :sea_state
   belongs_to :cloud_cover
   belongs_to :mode
+  belongs_to :species
 
   has_many :biopsies
   has_many :feces
@@ -15,4 +16,7 @@ class Sighting < ActiveRecord::Base
     where(search.delete_if { |k,v| v.empty? })
   end
 
+  def to_s
+    id.to_s
+  end
 end

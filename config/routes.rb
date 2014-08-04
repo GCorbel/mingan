@@ -11,5 +11,6 @@ Rails.application.routes.draw do
   resources :cloud_covers
   resources :vessels
   resources :modes
+  resources :species
   resources :animals
 end

@@ -11,6 +11,7 @@ td
 td
   = object.sex
 td.actions
-  = smart_listing_item_actions [ { name: :edit, url: edit_sighting_blow_path(parent, object) },
-    { name: :destroy, url: sighting_blow_path(parent, object),
+  = smart_listing_item_actions [ { name: :edit,
+    url: edit_sighting_biopsy_path(parent, object) },
+    { name: :destroy, url: sighting_biopsy_path(parent, object),
       confirmation: t('smart_listing.msgs.destroy_confirmation') }]

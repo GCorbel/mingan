@@ -1,4 +1,4 @@
-td [colspan="12"]
+td [colspan="10"]
   = simple_form_for(resource, html: {class: 'form-horizontal' }, remote: true) do |f|
     .container
       .row
@@ -6,6 +6,7 @@ td [colspan="12"]
           = f.input :date
           = f.input :time
           = f.association :mode
+          = f.association :species
           = f.association :region
           = f.association :vessel
           = f.input :longitude
