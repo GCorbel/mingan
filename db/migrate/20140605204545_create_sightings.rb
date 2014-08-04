@@ -20,6 +20,7 @@ class CreateSightings < ActiveRecord::Migration
       t.time :end_time
       t.string :end_place
       t.text :comments2
+      t.integer :mode_id
 
       t.timestamps
     end

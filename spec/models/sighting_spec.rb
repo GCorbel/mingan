@@ -6,6 +6,7 @@ RSpec.describe Sighting, :type => :model do
   it { is_expected.to belong_to(:vessel) }
   it { is_expected.to belong_to(:sea_state) }
   it { is_expected.to belong_to(:cloud_cover) }
+  it { is_expected.to belong_to(:mode) }
 
   describe "#search" do
     it "search models with the given parameters" do
