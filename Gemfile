@@ -16,7 +16,7 @@ gem 'slim-rails'
 gem 'therubyracer', :platform=>:ruby
 gem 'inherited_resources'
 gem 'simple_form'
-gem 'smart_listing', path: '../smart_listing'
+gem 'smart_listing', github: 'GCorbel/smart_listing'
 gem 'heroku'
 group :development do
   gem 'better_errors'

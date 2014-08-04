@@ -1,5 +1,6 @@
-PATH
-  remote: ../smart_listing
+GIT
+  remote: git://github.com/GCorbel/smart_listing.git
+  revision: 94ffb3fa6b876c78337ad7c7a7c85d4f739e5486
   specs:
     smart_listing (1.0.0)
       coffee-rails
