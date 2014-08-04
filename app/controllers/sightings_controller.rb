@@ -16,6 +16,16 @@ class SightingsController < InheritedResources::Base
     end
   end
 
+  def new
+    @sighting = Sighting.new(session[:new_sighting_params])
+    super
+  end
+
+  def create
+    session[:new_sighting_params] = params[:sighting]
+    super
+  end
+
   private
 
   def columns
