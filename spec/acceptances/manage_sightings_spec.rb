@@ -20,10 +20,11 @@ feature 'Manage Sightings' do
   #   And I fill the form with valid information
   #   Then it create a new sighting
   scenario 'Create a new sighting', js: true do
+    create(:mode, name: 'Survey')
     visit sightings_path
     click_on "New"
     fill_in_form_with_valid_information
-    expect(page).to have_content("50.01")
+    expect(page).to have_content("Survey")
   end
 
   # Scenario: Create two new sightings
@@ -33,19 +34,20 @@ feature 'Manage Sightings' do
   #   And I reopen the form to create a sighting
   #   Then it keep the information
   scenario 'Create two sightings', js: true do
+    mode = create(:mode, name: 'Survey')
     visit sightings_path
     click_on "New"
     fill_in_form_with_valid_information
 
     click_on "New"
     within("#new_sighting") do
-      expect(find_field("Longitude").value).to eq "50.01"
+      expect(find_field("Mode").value).to eq mode.id.to_s
     end
   end
 
   def fill_in_form_with_valid_information
     within("#new_sighting") do
-      fill_in "Longitude", with: "50.01"
+      select "Survey", from: "Mode"
       click_on 'Valider'
     end
   end

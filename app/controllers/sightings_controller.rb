@@ -32,7 +32,7 @@ class SightingsController < InheritedResources::Base
     [:date, :time, :region_id, :vessel_id, :longitude, :latitude,
      :sea_state_id, :cloud_cover_id, :wind_speed, :wind_direction, :comments,
      :staff, :start_time, :start_place, :end_time, :end_place, :comments2,
-     :species_id]
+     :species_id, :mode_id]
   end
 
   def presenter
