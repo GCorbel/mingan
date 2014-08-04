@@ -27,8 +27,10 @@ feature 'Manage Sittings' do
   end
 
   def fill_in_form_with_valid_information
-    fill_in "Longitude", with: "50.01"
-    click_on 'Valider'
+    within("#new_sighting") do
+      fill_in "Longitude", with: "50.01"
+      click_on 'Valider'
+    end
   end
 
 end

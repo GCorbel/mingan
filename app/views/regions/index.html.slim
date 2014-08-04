@@ -1,17 +1,1 @@
-= smart_listing_render(:regions) do |smart_listing|
-  table.table.table-striped
-    thead
-      th name
-      th
-    tbody
-      - if smart_listing.empty?
-        tr
-          td
-           | Aucune donnée
-      - else
-        - smart_listing.collection.each do |region|
-          tr.editable [data-id="#{region.id}"]
-            = render region, object: region
-      = smart_listing.item_new link: new_region_path
-  = smart_listing.paginate
-  = smart_listing.pagination_per_page_links
+= smart_listing_render(:regions)

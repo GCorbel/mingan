@@ -3,13 +3,9 @@
 FactoryGirl.define do
   factory :sighting do
     date "2014-06-05"
-    region "MyString"
-    vessel "MyString"
     time "2014-06-05 16:42:11"
     latitude "MyString"
     longitude "MyString"
-    sea_state "MyString"
-    cloud_cover "MyString"
     wind_speed "MyString"
     wind_direction "MyString"
     visibility "MyString"
@@ -21,5 +17,9 @@ FactoryGirl.define do
     end_time "2014-06-05 16:42:11"
     end_place "MyString"
     comments2 "MyText"
+    sea_state
+    cloud_cover
+    region
+    vessel
   end
 end

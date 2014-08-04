@@ -1,2 +1,2 @@
-<%= smart_listing_item :sightings, :update, @sighting,
-                       @sighting.valid? ? "sightings/sighting" : "sightings/form" %>
+<%= smart_listing_item :update, resource,
+  resource.valid? ? "sightings/sighting" : "sightings/form" %>

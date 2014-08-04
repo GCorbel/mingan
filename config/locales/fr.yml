@@ -214,7 +214,20 @@ fr:
     pm: 'pm'
   shared:
     submit: 'Valider'
-  smart_listing:
     actions:
       destroy: Supprimer
       edit: Modifier
+  smart_listing:
+    msgs:
+      destroy_confirmation: Destroy?
+      no_items: No items
+    actions:
+      destroy: Destroy
+      edit: Edit
+      show: Show
+      new: New item
+  views:
+    pagination:
+      per_page: Per page
+      unlimited: Unlimited
+      gotal: Total

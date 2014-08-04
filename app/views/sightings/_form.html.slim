@@ -5,13 +5,13 @@ td [colspan="12"]
         .col-md-4
           = f.input :date
           = f.input :time
-          = f.input :region, collection: ['Ming','Estu']
-          = f.input :vessel, collection: ['Mistral']
+          = f.association :region
+          = f.association :vessel
           = f.input :longitude
           = f.input :latitude
         .col-md-4
-          = f.input :sea_state, collection: ['Ok']
-          = f.input :cloud_cover, collection: ['Nuageux']
+          = f.association :sea_state
+          = f.association :cloud_cover
           = f.input :wind_speed
           = f.input :wind_direction
           = f.input :visibility

@@ -11,10 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140802101640) do
+ActiveRecord::Schema.define(version: 20140804093525) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "cloud_covers", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "regions", force: true do |t|
     t.string   "name"
@@ -22,15 +28,21 @@ ActiveRecord::Schema.define(version: 20140802101640) do
     t.datetime "updated_at"
   end
 
+  create_table "sea_states", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "sightings", force: true do |t|
     t.date     "date"
-    t.string   "region"
-    t.string   "vessel"
+    t.integer  "region_id"
+    t.integer  "vessel_id"
     t.time     "time"
     t.string   "latitude"
     t.string   "longitude"
-    t.string   "sea_state"
-    t.string   "cloud_cover"
+    t.integer  "sea_state_id"
+    t.integer  "cloud_cover_id"
     t.string   "wind_speed"
     t.string   "wind_direction"
     t.string   "visibility"
@@ -42,6 +54,12 @@ ActiveRecord::Schema.define(version: 20140802101640) do
     t.time     "end_time"
     t.string   "end_place"
     t.text     "comments2"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "vessels", force: true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
