@@ -13,7 +13,11 @@ class Sighting < ActiveRecord::Base
   has_many :animals, through: :animal_sightings
 
   def self.search(search)
-    where(search.delete_if { |k,v| v.empty? })
+    if search
+      where(search.delete_if { |k,v| v.empty? })
+    else
+      all
+    end
   end
 
   def to_s
