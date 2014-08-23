@@ -1,4 +1,5 @@
 class SightingsController < InheritedResources::Base
+  load_and_authorize_resource
   include SmartListing::Scaffold
 
   respond_to :html, :js, :xml, :csv

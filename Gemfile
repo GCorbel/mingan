@@ -45,3 +45,5 @@ group :test do
   gem 'selenium-webdriver'
   gem 'timecop'
 end
+gem 'devise'
+gem 'cancan'

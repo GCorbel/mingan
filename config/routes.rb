@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
-  root to: "sightings#index"
+  devise_for :users
+
+  devise_scope :user do
+    authenticated :user do
+      root 'visitors#index', as: :authenticated_root
+    end
+    root to: "devise/sessions#new"
+  end
+
   resources :sightings do
     resources :blows
     resources :biopsies
