@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140823100303) do
+ActiveRecord::Schema.define(version: 20141016091133) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,11 +33,22 @@ ActiveRecord::Schema.define(version: 20140823100303) do
     t.integer  "blow_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "pics_id"
+    t.string   "field_id"
+    t.integer  "number"
+    t.string   "position_in_group"
+    t.string   "cow_calf"
+    t.string   "first_sight"
+    t.datetime "time"
+    t.integer  "species_id"
+    t.integer  "vessel_id"
   end
 
   add_index "animals", ["biopsy_id"], name: "index_animals_on_biopsy_id", using: :btree
   add_index "animals", ["blow_id"], name: "index_animals_on_blow_id", using: :btree
   add_index "animals", ["fece_id"], name: "index_animals_on_fece_id", using: :btree
+  add_index "animals", ["species_id"], name: "index_animals_on_species_id", using: :btree
+  add_index "animals", ["vessel_id"], name: "index_animals_on_vessel_id", using: :btree
 
   create_table "biopsies", force: true do |t|
     t.string   "tissue"

@@ -1,11 +1,17 @@
-td colspan="5"
+td colspan="12"
   = simple_form_for(object, html: {class: 'form-horizontal' }, remote: true) do |f|
     .container
       .row
-        = f.input :name
+        = f.input :number
+        = f.input :field_id
+        = f.input :pics_id
+        = f.input :position_in_group
         = f.association :biopsy
-        = f.association :fece
-        = f.association :blow
+        = f.input :cow_calf
+        = f.input :first_sight
+        = f.input :time
+        = f.association :species
+        = f.association :vessel
     .control-group
       .controls
         = f.submit t('shared.submit'), class: 'btn btn-primary'

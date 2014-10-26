@@ -3,9 +3,15 @@ class AnimalsController < InheritedResources::Base
 
   include SmartListing::Scaffold
 
+  def index
+    animals = Animal.includes(:species, :vessel).all
+    smart_listing_create :animals, animals, partial: "animals/list"
+  end
+
   private
 
   def columns
-    [:name, :biopsy_id, :fece_id, :blow_id]
+    [:number, :field_id, :pics_id, :position_in_group, :biopsy_id,
+     :cow_calf, :first_sight, :time, :species_id, :vessel_id]
   end
 end

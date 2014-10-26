@@ -82,6 +82,9 @@ GEM
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
     diff-lcs (1.2.5)
+    dotenv (1.0.1)
+    dotenv-rails (1.0.1)
+      dotenv (= 1.0.1)
     erubis (2.7.0)
     excon (0.39.5)
     execjs (2.2.1)
@@ -134,7 +137,9 @@ GEM
     mini_portile (0.6.0)
     minitest (5.4.0)
     multi_json (1.10.1)
+    mysql (2.9.1)
     netrc (0.7.7)
+    newrelic_rpm (3.9.0.229)
     nokogiri (1.6.3.1)
       mini_portile (= 0.6.0)
     orm_adapter (0.5.0)
@@ -277,6 +282,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   database_cleaner
   devise
+  dotenv-rails
   factory_girl_rails
   faker
   heroku
@@ -286,6 +292,8 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   launchy
+  mysql
+  newrelic_rpm
   pg
   pry-byebug
   pry-nav

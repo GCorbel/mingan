@@ -1,11 +1,25 @@
 td
-  = object.name
+  = object.number
+td
+  = object.field_id
+td
+  = object.pics_id
+td
+  = object.position_in_group
 td
   = object.biopsy
 td
-  = object.fece
+  = object.cow_calf
 td
-  = object.blow
+  = object.first_sight
+td
+  = object.time
+td
+  = object.species
+td
+  = object.vessel
+td
+  = link_to_mics_pix(animal: object)
 td.actions
   = smart_listing_item_actions [ { name: :edit, url: edit_animal_path(object) },
     { name: :destroy, url: animal_path(object),
