@@ -16,10 +16,6 @@ class MicsPixLinkCreator
   end
 
   def mics_pix_values
-    values = {}
-    @@mics_pix_values ||= MicsPix.select(:mics_id, :FBatchFolderId).each do |row|
-      values[row.mics_id] = row.FBatchFolderId
-    end
-    values
+    @@mics_pix_values ||= MicsPix.all.each_with_object({}) { |m,h| h[m.MICS_ID] = m.FBatchFolderId }
   end
 end
